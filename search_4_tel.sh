@@ -1,27 +1,17 @@
 # !/bin/sh
 
-cookbiz="cookbiz/html/_framework/"
-cucina="cookbiz-master-x/"
-master_g="cookbiz-master-g/"
-corp2="corp2/protected/"
+folders=("cookbiz/html/_framework" "cookbiz-master-x" "cookbiz-master-g" "corp2/protected" )
+base_root=~/Documents/vagrant-cookbiz/apps/
 
-cd ~/Documents/vagrant-cookbiz/apps/
+echo "${base_root}"
+cd $base_root
 echo 'Please enter the keyword to be found:'
 read keyword
-echo "The keyword you entered was '$keyword'."
+echo "The keyword is \"$keyword\"."
 
-# cookbiz
-echo "Result in $cookbiz"
-grep -R -n --color=auto $keyword $cookbiz --exclude-dir={vendor,logs}
-
-# cucina
-echo "Result in $cucina"
-grep -R -n --color=auto $keyword $cucina --exclude-dir={vendor,logs}
-
-# master_g
-echo "Result in $master_g"
-grep -R -n $keyword $master_g --exclude-dir={vendor,logs}
-
-# corp2
-echo "Result in $corp2"
-grep -R -n $keyword $corp2 --exclude-dir={vendor,logs}
+i=0
+for i in ${folders[@]};
+do
+    echo "Result in \"$i\""
+    grep -R -n --color=auto "${keyword}" $i --exclude-dir={vendor,logs,log,tests}
+done
