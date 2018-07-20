@@ -17,7 +17,7 @@ jp_acpt()
 {
     echo "Run JP AcceptanceTest"
     cd /vagrant/apps/cookbiz/html/_framework/codeception/cui
-    "`../../vendor/bin/codecept run acceptance`"
+    echo "`../../vendor/bin/codecept run acceptance`"
     echo "\n\n"
 }
 
