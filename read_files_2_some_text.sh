@@ -1,3 +1,11 @@
+#!/bin/sh
+
+# Author : Rufus Sai
+# date : 2018/09/13
+# modified: 
+# goal : クチナのControllerのファイル名リストを読み込んで、crud用のメッセージを生成
+# Script follows here:
+
 search_dir="/Users/s-sai/Documents/vagrant-cookbiz/apps/cookbiz-master-x/src/Controller"
 
 file_list=`ls $search_dir | xargs -n 1 basename`
@@ -79,6 +87,36 @@ do
         "work orders" )
             jp_name="作業オーダー"
             ;;
+        "publication requests" )
+            jp_name="掲載依頼"
+            ;;
+        "job postings" )
+            jp_name="求人"
+            ;;
+        "opportunities" )
+            jp_name="商談"
+            ;;
+        "publish managements" )
+            jp_name="掲載管理"
+            ;;
+        "salesforce accounts" )
+            jp_name="salesforceアカウント"
+            ;;
+        "salesforce jobs" )
+            jp_name="salesforceジョブ"
+            ;;
+        "salesforce users" )
+            jp_name="salesforceユーザー"
+            ;;
+        "upper display options" )
+            jp_name="上位表示"
+            ;;
+        "write progresses" )
+            jp_name="原稿進捗"
+            ;;
+        #除外区
+        "app" | "component" | "cookbiz configs" | "error" | "follow ups" | "searches" | "site status" | "pages" )
+            continue;;
         * )
             jp_name="日本語"
             ;;
