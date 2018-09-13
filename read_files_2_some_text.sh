@@ -52,7 +52,7 @@ do
             jp_name="求人エントリー"
             ;;
         "job posting shop locations" )
-            jp_name="主要勤務地"
+            jp_name="代表勤務地"
             ;;
         "job postings special features" )
             jp_name="求人原稿特集"
